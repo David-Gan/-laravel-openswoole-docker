@@ -1,9 +1,10 @@
 cd /var/www
 
+composer require laravel/octane
+composer install
+npm install --save-dev chokidar
+
 if [ -f ./.env ]; then
-  composer install
-  composer require laravel/octane
-  
   php artisan migrate
   php artisan cache:clear
   php artisan optimize
